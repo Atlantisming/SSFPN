@@ -1,12 +1,10 @@
-import warnings
-from typing import List, Optional, Sequence, Tuple, Union
+# Copyright (c) OpenMMLab. All rights reserved.
+from typing import Tuple
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
 from mmcv.cnn import ConvModule
-from mmdet.utils import MultiConfig, OptConfigType, ConfigType
 from mmengine.model import BaseModule
 from torch import Tensor
 
@@ -337,7 +335,8 @@ class SSPAFPN(FPN):
         # build outputs
         # part 1: from original levels
         # inter_outs = [
-        #     self.fpn_convs[i](attn_out[i]) * laterals_copy[i] for i in range(used_backbone_levels)
+        #     self.fpn_convs[i](attn_out[i]) * laterals_copy[i]
+        #     for i in range(used_backbone_levels)
         # ]
         inter_outs = [
             self.fpn_convs[i](attn_out[i]) for i in range(used_backbone_levels)
