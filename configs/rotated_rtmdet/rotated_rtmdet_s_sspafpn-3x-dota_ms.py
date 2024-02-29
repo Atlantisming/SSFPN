@@ -26,4 +26,3 @@ model = dict(
 # batch_size = (1 GPUs) x (8 samples per GPU) = 8
 train_dataloader = dict(batch_size=2, num_workers=2)
 base_lr = 0.004 / 16 / 4  # 0.00025 for bs = 8
-
