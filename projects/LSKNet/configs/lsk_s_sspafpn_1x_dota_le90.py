@@ -146,11 +146,8 @@ optim_wrapper = dict(
     optimizer=dict(
         _delete_=True,
         type='AdamW',
-        lr=0.0002/4, # 0.0002 for bs 8
+        lr=0.0002 / 4,  # 0.0002 for bs 8
         betas=(0.9, 0.999),
         weight_decay=0.05))
 
-train_cfg=dict(val_interval=6)
-
-test_evaluator = dict(
-    outfile_prefix='./work_dirs/lsk_s_ssfpn_1x_dota_le90/12e_2gpus_2bs_lsk_ssfpn')
+train_cfg = dict(val_interval=6)
